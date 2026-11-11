@@ -55,7 +55,7 @@ agent = create_agent(
 
 
 def run_agent(question: str):
-    print(f"user: {question}")
+    #print(f"user: {question}")
     print("-" * 50)
 
     result = agent.invoke(
@@ -67,11 +67,18 @@ def run_agent(question: str):
     final_message = result["messages"][-1]
     print("agent:", final_message.text)
 
-#simple
-run_agent("What is the sum of 5 and 10?")
-#medium
-run_agent("What is 8 multiplied by 3, then divided by 4?")
+# #simple
+# run_agent("What is the sum of 5 and 10?")
+# #medium
+# run_agent("What is 8 multiplied by 3, then divided by 4?")
 
-#complex
-run_agent("I have a rectangle with a length of 12 units and a width of 5 units. What is the area of the rectangle, and what is the square root of that area?")
-run_agent("Who is president of India?")
+# #complex
+# run_agent("I have a rectangle with a length of 12 units and a width of 5 units. What is the area of the rectangle, and what is the square root of that area?")
+# run_agent("Who is president of India?")
+
+while True:
+	question=input(f"user: ")
+	if question.strip().lower() == 'exit':
+		break
+	else:
+		run_agent(question)
